@@ -25,8 +25,7 @@ module.exports = function() {
 
     router.get('/estudianteina',nuevoEstudianteCtrl.getEstudiantesInactivos)
 
-    router.put('/estudiante/:id/cambiar-estatus', nuevoEstudianteCtrl.cambiarEstatusEstudiantes);
-
+   
 
     return router;
 
