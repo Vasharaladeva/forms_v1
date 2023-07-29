@@ -46,11 +46,7 @@ exports.subirArchivo = (req, res, next) => {
 
 // Agregar un nuevo estudiante
 exports.nuevoEstudiante = async (req, res, next) => {
-  const emailExistente = await Estudiante.findOne({ email: req.body.email });
-
-    if (emailExistente) {
-      return res.status(409).json({ message: 'El email ya está registrado.' });
-    }
+  
   try {
     const estudiante = new Estudiante(req.body);
 
