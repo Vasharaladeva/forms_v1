@@ -65,7 +65,7 @@ exports.nuevoEstudiante = async (req, res, next) => {
       estudiante.imagenPerfil = req.files['imagenPerfil'][0].filename;
     }
 
-    await estudiante.save();
+    
 
     // Convertir el objeto a cadena JSON
     const jsonStr = JSON.stringify(estudiante._id);
@@ -115,7 +115,7 @@ exports.nuevoEstudiante = async (req, res, next) => {
       }
     });
 
-    
+    await estudiante.save();
     res.json({ mensaje: 'Se agregó un nuevo estudiante' });
   } catch (error) {
     console.log(error);
